@@ -1,0 +1,10 @@
+// testing by example on utilizing repeatable low power movement
+
+public class Main{
+    public static void mainServo{
+        Servo exampleServo = new Servo(1);
+        exampleServo.set(.5);
+        exampleServo.setAngle(75);
+    }
+}
+
