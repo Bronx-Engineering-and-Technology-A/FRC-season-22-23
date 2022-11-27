@@ -84,3 +84,19 @@ public final class test {
         }
     }
 }
+
+// we must create a subsystem which would then pass over to the command folder, then we would able to execute this in the main file
+
+package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.Servo;
+
+class ServoSub{
+    public void servoSub(){
+        try (Servo exampleServo = new Servo(1)) {
+            exampleServo.set(.5);
+            exampleServo.setAngle(75);
+        }
+    }
+}
+
+
