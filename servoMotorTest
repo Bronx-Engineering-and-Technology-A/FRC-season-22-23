@@ -1,0 +1,102 @@
+// testing by example on utilizing repeatable low power movement
+
+public class Main{
+    public static void mainServo{
+        Servo exampleServo = new Servo(1);
+        exampleServo.set(.5);
+        exampleServo.setAngle(75);
+    }
+}
+
+// test Java sect
+
+package frc.robot.servoMotor;
+import edu.wpi.first.wpilibj.Servo;
+
+public class test {
+    public static mainMotor{
+        Servo exampleServo = new Servo(1);
+        exampleServo.set(.5);
+        exampleServo.setAngle(75);
+    }
+}
+
+
+// in theory we could then import this set of code onto java.main and then execute it there
+
+// test code2||exmp
+
+
+
+    import edu.wpi.first.wpilibj.Servo;
+    import edu.wpi.first.hal.PWMConfigDataResult;
+
+    private final static Servo servo = new Servo(0);
+
+    @Override
+    public void teleopPeriodic() {
+
+     setDisplayServo(0.5); // refresh the servo position
+
+    }
+
+    private void setDisplayServo(final double position) {
+
+        PWMConfigDataResult a;
+
+        a = servo.getRawBounds();
+
+        System.out.format("%d %d %d %d %d\n",
+          a.center,
+          a.deadbandMax,
+          a.deadbandMin,
+          a.max,
+          a.min);
+
+        servo.set(position);
+      
+        a = servo.getRawBounds();
+
+        System.out.format("%d %d %d %d %d\n",
+          a.center,
+          a.deadbandMax,
+          a.deadbandMin,
+          a.max,
+          a.min);
+
+        System.out.println("Servo raw " + servo.getRaw());
+
+    }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// v.2.1 java code, we have to use a rotational sense in order to move the motor, whilst this may seem difficult first we must learn to implement the code 
+in which executes when moving the romi none the less.
+
+package frc.robot.servoMotor;
+import edu.wpi.first.wpilibj.Servo;
+
+public final class test {
+    public static void main(String[] args){
+        try (Servo exampleServo = new Servo(1)) {
+            exampleServo.set(.5);
+            exampleServo.setAngle(75);
+        }
+    }
+}
+
+// we must create a subsystem which would then pass over to the command folder, then we would able to execute this in the main file
+
+package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.Servo;
+
+class ServoSub{
+    public void servoSub(){
+        try (Servo exampleServo = new Servo(1)) {
+            exampleServo.set(.5);
+            exampleServo.setAngle(75);
+        }
+    }
+}
+
+
